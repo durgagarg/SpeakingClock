@@ -19,10 +19,10 @@ NOTES :
 
 Requirements
 ------------
-Java1.8
-SpringBoot 2.3.5.RELEASE
-Junit4
-Apache Maven 3.6.3 
+- Java1.8
+- SpringBoot 2.3.5.RELEASE
+- Junit4
+- Apache Maven 3.6.3 
 
 Build & Deployments
 ------------------
