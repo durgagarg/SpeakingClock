@@ -26,8 +26,8 @@ Requirements
 
 Build & Deployments
 ------------------
-install Open JDK1.8
-setup Apache Maven 3.6.3
-mvn clean Install 
-mvn spring-boot:run
-click http://localhost:8085/api/clock/12:00 to test
+- install Open JDK1.8
+- setup Apache Maven 3.6.3
+- mvn clean Install 
+- mvn spring-boot:run
+- open http://localhost:8085/api/clock/12:00 in browser to test
