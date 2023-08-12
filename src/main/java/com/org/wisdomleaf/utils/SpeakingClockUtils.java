@@ -33,15 +33,12 @@ public class SpeakingClockUtils {
      */
     public String parseTime(String hour) {
 
-        try {
-            hour.trim().split(":");
-        } catch (NumberFormatException e) {
-            throw new NumberFormatException("You need to pass a valid 24 hour format hour");
-        }
-
-        String[] hours = hour.trim().split(":");
+       
+        String[] hours;// = hour.trim().split(":");
+        String hourInWords;//
 
         try {
+        	hours = hour.trim().split(":");
             Integer.parseInt(hours[0]);
             Integer.parseInt(hours[1]);
         } catch (NumberFormatException e) {
@@ -50,12 +47,18 @@ public class SpeakingClockUtils {
 
         this.hours = Integer.parseInt(hours[0]);
         this.minutes = Integer.parseInt(hours[1]);
-        
-        String hourInWords = convertToWords(this.getHours(), this.getMinutes());
-
-        if (hourInWords.equals("")) {
-            System.out.println("It was not possible to convert the hour passed to words");
+        try {	
+        		hourInWords = convertToWords(this.getHours(), this.getMinutes());
+        		 if (hourInWords.equals("")) {
+        	           throw new Exception("It was not possible to convert the hour passed to words");
+        	        }
         }
+        catch (IndexOutOfBoundsException e) {
+			throw new IndexOutOfBoundsException("You need to pass a valid 24 hour format hour");
+		}
+        catch (Exception e) {
+			throw new IndexOutOfBoundsException("Something went wrong");
+		}
         return hourInWords;
     }
 

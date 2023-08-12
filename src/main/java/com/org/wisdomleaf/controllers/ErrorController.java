@@ -15,5 +15,14 @@ public class ErrorController {
 		
 		return "You need to pass a valid 24 hour format hour";
 	}
+	
+	@ExceptionHandler(IndexOutOfBoundsException.class)
+	@ResponseStatus(code = HttpStatus.INTERNAL_SERVER_ERROR)
+	public String handleOutOfIndexException() {
+		
+		return "Invaid time input";
+	}
+	
+	
 
 }

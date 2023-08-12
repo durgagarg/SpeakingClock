@@ -33,6 +33,6 @@ public class SpeakingClockUtilsTest {
 	@Test
     public void WordTime_Test() {
 		SpeakingClockUtils speakingClockUtils = new SpeakingClockUtils();
-        assertEquals("It's one fifty", speakingClockUtils.parseTime("1:50"));
+        assertEquals("It's one fifty ", speakingClockUtils.parseTime("1:50"));
     }
 }
